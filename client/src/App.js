@@ -4,16 +4,24 @@ import withAuth from './withAuth';
 import Home from './Home';
 import Secret from './Secret';
 import Login from './Login';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
 class App extends Component {
   render() {
     return (
       <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/secret">Secret</Link></li>
-          <li><Link to="/login">Login</Link></li>
-        </ul>
+
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/secret">Secret</Nav.Link>
+              <Nav.Link href="/login">login</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
 
         <Switch>
           <Route path="/" exact component={Home} />

@@ -24,15 +24,25 @@ router.get('/', function (req, res) {
   
   router.post('/api/register', (req, res) => {
     const { email, password } = req.body;
-    const user = new User({ email, password });
-    user.save(function(err) {
-      if (err) {
-        console.log(err);
-        res.status(500).send("Error registering new user please try again.");
-      } else {
-        res.status(200).send("Welcome to the club!");
+    User.findOne({ email })
+    .then(user => {
+      if(user) {
+        res.status(404).send(`${email} already has an account, please login or reset your password`)
+      }
+      else if(!user) {
+
+        const user = new User({ email, password });
+        user.save(function(err) {
+          if (err) {
+            console.log(err);
+            res.status(500).send("Error registering new user please try again.");
+          } else {
+            res.status(200).send("Welcome to the club!");
+          }
+        });
       }
     });
+    
   });
   router.post('/api/logout',(req, res) => {
     res.clearCookie('token')
@@ -55,7 +65,7 @@ router.get('/', function (req, res) {
           error: 'Incorrect email or password'
         });
       } else {
-        user.isCorrectPassword(password, function(err, same) {
+        user.isCorrectPassword(password, ((err, same) => {
           if (err) {
             res.status(500)
               .json({
@@ -74,7 +84,7 @@ router.get('/', function (req, res) {
             });
             res.cookie('token', token, { httpOnly: true }).sendStatus(200);
           }
-        });
+        }));
       }
     });
   });

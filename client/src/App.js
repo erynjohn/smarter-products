@@ -4,7 +4,7 @@ import withAuth from './withAuth';
 import Home from './Home';
 import Secret from './Secret';
 import Login from './Login';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 
 class App extends Component {
   render() {

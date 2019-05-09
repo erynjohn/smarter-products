@@ -49,7 +49,6 @@ router.get('/', function (req, res) {
     .sendStatus(200);
   })
 
-  
   router.post('/api/authenticate', (req, res)  => {
     const { email, password } = req.body;
     User.findOne({ email }, function(err, user) {
@@ -65,7 +64,7 @@ router.get('/', function (req, res) {
           error: 'Incorrect email or password'
         });
       } else {
-        user.isCorrectPassword(password, ((err, same) => {
+        user.isCorrectPassword(password, function(err, same) {
           if (err) {
             res.status(500)
               .json({
@@ -84,7 +83,7 @@ router.get('/', function (req, res) {
             });
             res.cookie('token', token, { httpOnly: true }).sendStatus(200);
           }
-        }));
+        });
       }
     });
   });

@@ -10,9 +10,11 @@ const router = express.Router();
 const secret = process.env.SECRET
 
 
-router.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-  });
+router.get('*', function(_, res) {
+  res.sendFile(path.join(__dirname, './client/public/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)}})
+});
   
   router.get('/api/home', (req, res) => {
   });

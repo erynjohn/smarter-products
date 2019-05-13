@@ -34,7 +34,7 @@ const Navigation = props => (
     <div style={styles} class="hero-image">
   <div class="hero-text">   
   <h1 style={h1}>Smarter Products</h1>
-
+  
   <header>
     <nav>
     <ul style={ul}>

@@ -8,12 +8,6 @@ const withAuth = require('../middleware');
 const router = express.Router();
 const secret = process.env.SECRET
 
-
-router.get('*', function(_, res) {
-  res.sendFile(path.join(__dirname, './client/public/index.html'), function(err) {
-    if (err) {
-      res.status(500).send(err)}})
-});
   
   router.get('/api/home', (req, res) => {
   });

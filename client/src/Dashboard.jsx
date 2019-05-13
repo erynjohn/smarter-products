@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Secret extends Component {
+export default class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
@@ -15,9 +15,10 @@ export default class Secret extends Component {
   }
 
   render() {
+
     return (
       <div>
-        <h1>Secret</h1>
+        <h1>Dashboard</h1>
         <p>{this.state.message}</p>
       </div>
     );

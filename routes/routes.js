@@ -7,7 +7,7 @@ const User = require('../models/User');
 const withAuth = require('../middleware');
 
 const router = express.Router();
-const secret = process.env.SECRET;
+const secret = process.env.SECRET
 
 
 router.get('/', function (req, res) {
@@ -15,7 +15,6 @@ router.get('/', function (req, res) {
   });
   
   router.get('/api/home', (req, res) => {
-    res.send('Welcome!');
   });
   
   router.get('/api/secret', withAuth, (req, res) => {
@@ -37,7 +36,7 @@ router.get('/', function (req, res) {
             console.log(err);
             res.status(500).send("Error registering new user please try again.");
           } else {
-            res.status(200).send("Welcome to the club!");
+            res.status(200).send("Welcom");
           }
         });
       }
@@ -55,9 +54,7 @@ router.get('/', function (req, res) {
       if (err) {
         console.error(err);
         res.status(500)
-          .json({
-          error: 'Internal error please try again'
-        });
+          .json({Error: 'Please try again'});
       } else if (!user) {
         res.status(401)
           .json({
@@ -78,10 +75,11 @@ router.get('/', function (req, res) {
           } else {
             // Issue token
             const payload = { email };
+            console.log(user)
             const token = jwt.sign(payload, secret, {
               expiresIn: '1h'
             });
-            res.cookie('token', token, { httpOnly: true }).sendStatus(200);
+            res.cookie('token', token, { httpOnly: true }).sendStatus(200)
           }
         });
       }

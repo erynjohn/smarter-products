@@ -1,6 +1,5 @@
 
 const express = require('express');
-
 const path = require('path');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');

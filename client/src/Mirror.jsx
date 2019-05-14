@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 
+
 class Mirror extends Component {
 
     render() {
@@ -12,7 +13,7 @@ class Mirror extends Component {
         }
         return (
             <div style={styles}>
-            <h2>Calendar</h2>
+
             </div>
         )
     }

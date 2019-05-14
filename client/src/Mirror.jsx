@@ -4,10 +4,16 @@ import React, { Component } from 'react';
 class Mirror extends Component {
 
     render() {
+
+        const styles = {
+            color: 'white',
+            backgroundColor: 'black',
+            height: '1080px'
+        }
         return (
-            <>
-            <h1>Mirror Page</h1>
-            </>
+            <div style={styles}>
+            <h2>Calendar</h2>
+            </div>
         )
     }
 }

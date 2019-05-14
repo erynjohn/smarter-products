@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navigation from './Navigation';
 import { Form, Col, FormGroup, Container, Button, Modal } from 'react-bootstrap';
 
 class Login extends Component {
@@ -81,6 +82,8 @@ class Login extends Component {
   render() {
 
     return (
+      <>
+      <Navigation />
       
       <Modal.Dialog>
   <Modal.Header>
@@ -192,6 +195,7 @@ class Login extends Component {
         </Modal>
 
 </Modal.Dialog>
+</>
 
 
     );

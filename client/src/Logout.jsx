@@ -20,7 +20,7 @@ class Logout extends Component {
   })
   .then(res => {
     if (res.status === 200) {
-      this.props.history.push('login');
+      this.props.history.push('/');
       var users = users
       console.log(users)
     } else {

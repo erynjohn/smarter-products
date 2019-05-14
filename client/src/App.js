@@ -13,7 +13,6 @@ class App extends Component {
 
       <div>
       <BrowserRouter>
-      <Navigation />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/dashboard" component={withAuth(Dashboard)} />

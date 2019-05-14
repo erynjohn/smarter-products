@@ -4,7 +4,6 @@ export default class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
-      message: 'Loading...'
     }
   }
 
@@ -19,7 +18,6 @@ export default class Dashboard extends Component {
     return (
       <div>
         <h1>Dashboard</h1>
-        <p>{this.state.message}</p>
       </div>
     );
   }

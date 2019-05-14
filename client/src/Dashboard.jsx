@@ -2,18 +2,13 @@ import React, { Component } from 'react';
 import Navigation from './Navigation';
 
 export default class Dashboard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      message: 'Loading...'
-    }
-  }
 
-  componentDidMount() {
-    fetch('/api/secret')
-      .then(res => res.text())
-      .then(res => this.setState({message: res}));
-  }
+
+  // componentDidMount() {
+  //   fetch('/api/secret')
+  //     .then(res => res.text())
+  //     .then(res => this.setState({message: res}));
+  // }
 
   render() {
 
@@ -21,7 +16,6 @@ export default class Dashboard extends Component {
       <div>
       <Navigation />
         <h1>Dashboard</h1>
-        <p>{this.state.message}</p>
       </div>
     );
   }

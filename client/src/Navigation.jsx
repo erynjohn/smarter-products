@@ -31,8 +31,8 @@ import Logout from './Logout';
  
 const Navigation = props => (
   <>
-    <div style={styles} class="hero-image">
-  <div class="hero-text">   
+    <div style={styles} className="hero-image">
+  <div className="hero-text">   
   <h1 style={h1}>Smarter Products</h1>
   
   <header>

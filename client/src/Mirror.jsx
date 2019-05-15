@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Login from './Login';
 
 
 
@@ -14,7 +13,6 @@ class Mirror extends Component {
         }
         return (
             <div style={styles}>
-            <Login />
 
             </div>
         )

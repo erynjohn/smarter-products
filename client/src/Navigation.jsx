@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Logout from './Logout';
 
+
  const ul = {
   listStyleType: 'none',
   margin: "0",
@@ -41,6 +42,7 @@ const Navigation = props => (
       <li><NavLink style={navLink} to="/">Home</NavLink></li>
       <li><NavLink style={navLink} to="/dashboard">Dashboard</NavLink></li>
       <li><NavLink style={navLink} to="/mirror">Mirror</NavLink></li>
+      <li><NavLink style={navLink} to="/face">Face Detection</NavLink></li>
     <Logout />
     </ul>
     </nav>

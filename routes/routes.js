@@ -18,7 +18,6 @@ router.get('/', function (req, res) {
   // router.get('/api/secret', withAuth, (req, res) => {
   //   res.send('The password is potato');
   // });
-  
   router.post('/api/register', (req, res) => {
     const { email, password } = req.body;
     User.findOne({ email })

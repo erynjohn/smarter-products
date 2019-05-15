@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Webcam from "react-webcam";\
+import Webcam from "react-webcam";
 import Navigation from './Navigation';
 
 export default class FaceDetect extends Component {

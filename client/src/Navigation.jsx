@@ -42,7 +42,7 @@ const Navigation = props => (
       <li><NavLink style={navLink} to="/">Home</NavLink></li>
       <li><NavLink style={navLink} to="/dashboard">Dashboard</NavLink></li>
       <li><NavLink style={navLink} to="/mirror">Mirror</NavLink></li>
-      <li><NavLink style={navLink} to="/video">Video</NavLink></li>
+      <li><NavLink style={navLink} to="/Detection">Profile</NavLink></li>
     <Logout />
     </ul>
     </nav>

@@ -3,13 +3,6 @@ import Clock from 'react-live-clock';
  
 
 export default class MirrorClock extends Component {
-
-
-    // componentDidMount() {
-    //   fetch('/api/secret')
-    //     .then(res => res.text())
-    //     .then(res => this.setState({message: res}));
-    // }
   
     render() {
         const styles = {
@@ -18,7 +11,7 @@ export default class MirrorClock extends Component {
   
       return (
         <div>
-<Clock style={styles} format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
+<Clock style={styles} format={'HH:mm:ss'} ticking={true} timezone={'US/Central'} />
         </div>
       );
     }

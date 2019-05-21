@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation';
-
-
 export default class Home extends Component {
 
   constructor(props) {
@@ -22,7 +20,6 @@ export default class Home extends Component {
     return (
       <>
       <Navigation />
-
 
       </>
 

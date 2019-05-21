@@ -5,12 +5,12 @@ export default class Detection extends Component {
   render() {
     return (
       <div>
-        <h2>BNK48 Facial Recognition App</h2>
+        <h2>Profile</h2>
         <li>
-          <Link to="/photo">Photo Input</Link>
+          <Link to="/photo">Profile</Link>
         </li>
         <li>
-          <Link to="/camera">Video Camera</Link>
+          <Link to="/camera">Face Detection</Link>
         </li>
       </div>
     );

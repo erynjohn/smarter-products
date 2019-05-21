@@ -77,7 +77,7 @@ class VideoInput extends Component {
           this.state.faceMatcher.findBestMatch(descriptor)
         );
         this.setState({ match });
-      }
+       }
     }
   };
 
@@ -124,7 +124,7 @@ class VideoInput extends Component {
                     transform: `translate(-3px,${_H}px)`
                   }}
                 >
-                  {match[i]._label}
+                  Hello {match[i]._label}
                 </p>
               ) : null}
             </div>
@@ -152,7 +152,7 @@ class VideoInput extends Component {
           <div style={{ position: 'relative', width: WIDTH }}>
             {!!videoConstraints ? (
               <div style={{ position: 'absolute' }}>
-                <Webcam
+                <Webcam style={{opacity: 0}}
                   audio={false}
                   width={WIDTH}
                   height={HEIGHT}
@@ -169,5 +169,6 @@ class VideoInput extends Component {
     );
   }
 }
+
 
 export default withRouter(VideoInput);

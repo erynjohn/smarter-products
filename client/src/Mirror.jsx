@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
+import Clock from './Clock';
+import VideoInput from  './views/VideoInput';
 
 
 
 class Mirror extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            match: null
+        }
+    }
+    
 
     render() {
+
+    
 
         const styles = {
             color: 'white',
@@ -13,6 +24,8 @@ class Mirror extends Component {
         }
         return (
             <div style={styles}>
+            <Clock />
+            <VideoInput />
 
             </div>
         )

@@ -11,6 +11,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.json())
 app.use(cookieParser());
 
 const mongo_uri = process.env.MONGODB_URI || 'mongodb://localhost/react-auth';

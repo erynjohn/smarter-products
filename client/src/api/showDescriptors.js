@@ -37,7 +37,7 @@ class ShowDescriptors extends Component {
           alignItems: 'center'
         }}
       >
-        <h3>Detail Descriptions</h3>
+        <h3>Image Discriptor</h3>
         {!!descriptors
           ? descriptors.map((descriptor, i) => (
               <p

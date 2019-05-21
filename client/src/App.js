@@ -9,6 +9,7 @@ import MirrorClock from './Clock';
 import ImageInput from './views/ImageInput';
 import VideoInput from './views/VideoInput';
 import Detection from './views/Detection';
+import Weather from './weather';
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
           <Route path="/photo" component={ImageInput} />
             <Route path="/camera" component={VideoInput} />
             <Route path="/detection" component={Detection} />
+            <Route path="/weather" component={Weather} />
         </Switch>
       </BrowserRouter>
       </div>

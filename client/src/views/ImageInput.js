@@ -23,7 +23,13 @@ const INIT_STATE = {
 class ImageInput extends Component {
   constructor(props) {
     super(props);
-    this.state = { ...INIT_STATE, faceMatcher: null };
+    this.state = { 
+      ...INIT_STATE, 
+      faceMatcher: null,
+      name: null,
+      email: null,
+      zipcode: null
+     };
   }
 
   componentWillMount = async () => {
@@ -74,6 +80,28 @@ class ImageInput extends Component {
     });
     this.handleImage();
   };
+  handleInputChange = (event) => {
+    const { value, name } = event.target;
+    this.setState({
+      [name]: value
+      
+    });
+  }
+
+  onSubmitProfile= (event) => {
+    event.preventDefault();
+    fetch('/api/profile', {
+      method: 'POST',
+      body: JSON.stringify(this.state.name, this.state.email, this.state.zipcode),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => { 
+      console.log('Data sent')
+  })
+  .catch(err => { throw err })
+  }
 
   resetState = () => {
     this.setState({ ...INIT_STATE });
@@ -124,6 +152,29 @@ class ImageInput extends Component {
 
     return (
       <>
+      <div style={{margin:'10px'}}>
+
+      <h3>Add Profile</h3>
+      <form onSubmit={this.onSubmitProfile}>
+      <input 
+      value={this.state.name}
+      onChange={this.handleInputChange}
+      style={{margin:'auto 5px'}} 
+      id='name' type='text' name='name' placeholder='Name' />
+      <input 
+      value={this.state.email}
+      onChange={this.handleInputChange}
+      style={{margin:'auto 5px'}} 
+      id='email' type='email' name='email' placeholder='email'/>
+      <input 
+      value={this.state.zipcode} 
+      onChange={this.handleInputChange} 
+      style={{margin:'auto 5px'}} 
+      id='zipcode' type='text' name='zipcode' placeholder='zipcode'/>
+      <button type='submit'>Submit</button>
+      </form>
+
+      </div>
         <input style={{margin: '5%'}}
           id="myFileUpload"
           type="file"

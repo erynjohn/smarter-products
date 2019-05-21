@@ -10,6 +10,7 @@ import ImageInput from './views/ImageInput';
 import VideoInput from './views/VideoInput';
 import Detection from './views/Detection';
 import Weather from './weather';
+import WeatherForecast from './WeatherForecast';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path="/camera" component={VideoInput} />
             <Route path="/detection" component={Detection} />
             <Route path="/weather" component={Weather} />
+            <Route path="/weather-forecast" component={WeatherForecast} />
         </Switch>
       </BrowserRouter>
       </div>

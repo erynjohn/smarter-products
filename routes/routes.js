@@ -4,7 +4,7 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const withAuth = require('../middleware');
-const fetch = require('fetch').fetchUrl;
+const fetch = require('node-fetch');
 
 const router = express.Router();
 const secret = process.env.SECRET
@@ -13,10 +13,21 @@ const secret = process.env.SECRET
 router.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+router.get('/api/weather', (req, res) => {
+  const apiid = 'ac80ded2fa14fe9b468818ffc3dd57f0';
+  const zipcode = 75038;
+  const url = `https://api.openweathermap.org/data/2.5/forecast?zipcode=${zipcode}`
+  const url1 = `,us&appid=${apiid}`
 
-router.get('/api/home', (req, res) => {
-  res.send("hello from express");
-  res.json({name: "eryn"})
+  fetch('https://api.openweathermap.org/data/2.5/weather?zip=75038,us&appid=ac80ded2fa14fe9b468818ffc3dd57f0')
+  .then(res => res.json())
+  .then(data => {
+    res.send({ data })
+  });
+
+})
+router.get('/api/smith', (req, res) => {
+  res.json('The password is potato');
 });
 
 
@@ -84,18 +95,6 @@ router.post('/api/authenticate', (req, res) => {
     }
   });
 });
-
-router.post('/api/weather', (req, res) => {
-  const zipcode = 75038;
-  const apikey = 'f96a047b98f960ba18eb94e719f13901';
-  const url = `http://api.openweathermap.org/data/2.5/weather?zip=$75038,us&f96a047b98f960ba18eb94e719f13901`;
-  fetch(url)
-  .then(res => res.json())
-  .then(data => {
-    res.send({ data })
-  })
-  .catch(err => { throw err})
-})
 
 
 router.get('/checkToken', withAuth, (req, res) => {

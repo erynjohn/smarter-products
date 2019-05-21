@@ -10,9 +10,9 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/home')
-      .then(res => res.text())
-      .then(res => this.setState({ message: res }));
+    fetch('/api/smith')
+    .then(res => res.json())
+    .then(res => this.setState({message: res}))
   }
 
   render() {
@@ -20,6 +20,8 @@ export default class Home extends Component {
     return (
       <>
       <Navigation />
+
+
 
       </>
 

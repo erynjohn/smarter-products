@@ -26,9 +26,9 @@ class ImageInput extends Component {
     this.state = { 
       ...INIT_STATE, 
       faceMatcher: null,
-      name: null,
-      email: null,
-      zipcode: null
+      name: '',
+      email: '',
+      zipcode: ''
      };
   }
 
@@ -71,7 +71,7 @@ class ImageInput extends Component {
     };
     img.src = imageURL;
   };
-
+// file handler
   handleFileChange = async event => {
     this.resetState();
     await this.setState({
@@ -80,6 +80,7 @@ class ImageInput extends Component {
     });
     this.handleImage();
   };
+// form handler
   handleInputChange = (event) => {
     const { value, name } = event.target;
     this.setState({
@@ -91,11 +92,17 @@ class ImageInput extends Component {
   onSubmitProfile= (event) => {
     event.preventDefault();
     fetch('/api/profile', {
-      method: 'POST',
-      body: JSON.stringify(this.state.name, this.state.email, this.state.zipcode),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({name: this.state.name, 
+        email: this.state.email,
+        zipcode: this.state.zipcode,
+        descriptors: this.state.descriptors
+        
+      })
     })
     .then(res => { 
       console.log('Data sent')
@@ -155,7 +162,7 @@ class ImageInput extends Component {
       <div style={{margin:'10px'}}>
 
       <h3>Add Profile</h3>
-      <form onSubmit={this.onSubmitProfile}>
+      <form>
       <input 
       value={this.state.name}
       onChange={this.handleInputChange}
@@ -171,7 +178,7 @@ class ImageInput extends Component {
       onChange={this.handleInputChange} 
       style={{margin:'auto 5px'}} 
       id='zipcode' type='text' name='zipcode' placeholder='zipcode'/>
-      <button type='submit'>Submit</button>
+      <button onClick={this.onSubmitProfile} type='submit'>Submit</button>
       </form>
 
       </div>

@@ -22,7 +22,7 @@ Component {
       }
       return (
         <div>
-        <DarkskyMap style={styles} lat={32.8479} lng={	-96.9740} zoom={4} fieldControl={false} units='fahrenheit' timeControl={false} mapField="temp" width= '100%' height='250px'  />
+        <DarkskyMap style={styles} lat={32.8479} lng={	-96.9740} zoom={4} fieldControl={false} units='imperial' timeControl={false} mapField="temp" width= '100%' height='250px'  />
         </div>
       )
     }

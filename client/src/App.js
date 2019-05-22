@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import withAuth from './withAuth';
-import Home from './Home';
-import Dashboard from './Dashboard';
+import Home from './Components/Home';
+import Dashboard from './Components/Dashboard';
 import Login from './Login';
-import Mirror from './Mirror';
-import MirrorClock from './Clock';
+import Mirror from './Components/Mirror';
+import MirrorClock from './Components/Clock';
 import ImageInput from './views/ImageInput';
 import VideoInput from './views/VideoInput';
 import Detection from './views/Detection';
-import Weather from './weather';
-import WeatherForecast from './WeatherForecast';
+import Weather from './Components/WeatherMap';
+import WeatherForecast from './Components/WeatherForecast';
 
 class App extends Component {
   render() {
@@ -27,8 +27,8 @@ class App extends Component {
           <Route path="/photo" component={ImageInput} />
             <Route path="/camera" component={VideoInput} />
             <Route path="/detection" component={Detection} />
-            <Route path="/weather" component={Weather} />
-            <Route path="/weather-forecast" component={WeatherForecast} />
+            <Route path="/WeatherMap" component={Weather} />
+            <Route path="/Weather-forecast" component={WeatherForecast} />
         </Switch>
       </BrowserRouter>
       </div>

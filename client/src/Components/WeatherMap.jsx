@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DarkskyMap from 'react-darksky-map';
-import { rightPad } from '@tensorflow/tfjs-core/dist/util';
 
 
 export default class Weather extends 

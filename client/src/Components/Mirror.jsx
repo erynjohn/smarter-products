@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Clock from './Clock';
-import VideoInput from  './views/VideoInput';
-import Weather from './weather';
+import VideoInput from  '../views/VideoInput';
+import Weather from './WeatherMap';
+import WeatherForcast from './WeatherForecast';
 import { Container, Row, Col } from  'react-bootstrap';
 
 
@@ -18,8 +19,7 @@ class Mirror extends Component {
     render() {
         const containerstyle = {
             color: 'white',
-            backgroundColor: 'black',
-            height: '1080px'
+            backgroundColor: 'black'
           }
 
         return (
@@ -31,6 +31,9 @@ class Mirror extends Component {
             </Row>
             <Row>
             <Col><VideoInput /></Col>
+            </Row>
+            <Row>
+            <Col><WeatherForcast /></Col>
             </Row>
           </Container>
 

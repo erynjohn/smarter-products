@@ -14,12 +14,10 @@ router.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 router.get('/api/weather', (req, res) => {
-  // const apiid = 'ac80ded2fa14fe9b468818ffc3dd57f0';
-  // const zipcode = 75038;
-  // const url = `https://api.openweathermap.org/data/2.5/forecast?zipcode=${zipcode}`
-  // const url1 = `,us&appid=${apiid}`
+  const zipcode = 75038;
+  apiid = process.env.APIID;
 
-  fetch('https://api.openweathermap.org/data/2.5/weather?zip=75038,us&appid=ac80ded2fa14fe9b468818ffc3dd57f0')
+  fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=${apiid}`)
   .then(res => res.json())
   .then(data => {
     res.send({ data })

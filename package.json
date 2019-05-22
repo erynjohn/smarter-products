@@ -43,9 +43,10 @@
     "node-fetch": "^2.6.0",
     "path": "^0.12.7",
     "react-darksky-map": "^0.1.0",
+    "react-live-clock": "^3.1.0",
+    "react-shopping-cart": "^1.8.31",
     "react-webcam": "^1.1.1",
     "request": "^2.88.0",
-    "validator": "^10.11.0",
-    "react-live-clock": "^3.1.0"
+    "validator": "^10.11.0"
   }
 }

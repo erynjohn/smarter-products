@@ -152,7 +152,7 @@ class VideoInput extends Component {
           <div style={{ position: 'relative', width: WIDTH }}>
             {!!videoConstraints ? (
               <div style={{ position: 'absolute' }}>
-                <Webcam style={{opacity: 0}}
+                <Webcam style={{opacity: 1}}
                   audio={false}
                   width={WIDTH}
                   height={HEIGHT}

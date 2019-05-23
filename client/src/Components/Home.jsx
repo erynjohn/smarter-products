@@ -9,11 +9,6 @@ export default class Home extends Component {
     }
   }
 
-  componentDidMount() {
-    fetch('/api/smith')
-    .then(res => res.json())
-    .then(res => this.setState({message: res}))
-  }
 
   render() {
     

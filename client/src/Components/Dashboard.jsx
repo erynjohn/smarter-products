@@ -5,12 +5,6 @@ import Detection from '../views/Detection'
 export default class Dashboard extends Component {
 
 
-  // componentDidMount() {
-  //   fetch('/api/secret')
-  //     .then(res => res.text())
-  //     .then(res => this.setState({message: res}));
-  // }
-
   render() {
 
     return (

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { loadModels, getFullFaceDescription, createMatcher } from '../api/face';
 import ShowDescriptors from '../api/showDescriptors';
+import Navigation from '../Navigation';
 
 // Import image to test API
 const testImg = require('../img/test.jpg');
@@ -26,9 +27,8 @@ class ImageInput extends Component {
     this.state = { 
       ...INIT_STATE, 
       faceMatcher: null,
-      name: '',
-      email: '',
-      zipcode: ''
+      name: ''
+
      };
   }
 
@@ -159,7 +159,8 @@ class ImageInput extends Component {
 
     return (
       <>
-      <div style={{margin:'10px'}}>
+      <Navigation />
+      <div style={{margin:'10px', backgroundColor: 'rgba(17,35,64, 0.2)', padding: '20px'}}>
 
       <h3>Add Profile</h3>
       <form>

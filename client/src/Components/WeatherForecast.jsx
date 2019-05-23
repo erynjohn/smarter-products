@@ -14,23 +14,23 @@ export default class WeatherForecast extends Component {
             icon: ''
         }
     }
-    componentWillMount() {
-        fetch('/api/weather')
-            .then(res => res.json())
-            .then(data => {
+    // componentWillMount() {
+    //     fetch('/api/weather')
+    //         .then(res => res.json())
+    //         .then(data => {
 
 
-                this.setState({
-                    temp: data.data.main.temp,
-                    high: data.data.main.temp_max,
-                    low: data.data.main.temp_min,
-                    description: data.data.weather[0].description,
-                    icon: data.data.weather[0].icon
-                })
-                console.log(data)
+    //             this.setState({
+    //                 temp: data.data.main.temp,
+    //                 high: data.data.main.temp_max,
+    //                 low: data.data.main.temp_min,
+    //                 description: data.data.weather[0].description,
+    //                 icon: data.data.weather[0].icon
+    //             })
+    //             console.log(data)
 
-            })
-    }
+    //         })
+    // }
 
 
     render() {

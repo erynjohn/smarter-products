@@ -142,7 +142,7 @@ class VideoInput extends Component {
           alignItems: 'center'
         }}
       >
-        <p>Camera: {camera}</p>
+        {/* <p>Camera: {camera}</p> */}
         <div
           style={{
             width: WIDTH,

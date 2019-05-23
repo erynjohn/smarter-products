@@ -22,10 +22,10 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/dashboard" component={withAuth(Dashboard)} />
           <Route path="/login" component={Login} />
-          <Route path="/mirror" component={withAuth(Mirror)} />
-          <Route path="/clock" component={MirrorClock} />
-          <Route path="/photo" component={ImageInput} />
-            <Route path="/camera" component={VideoInput} />
+          <Route path="/mirror" component={(Mirror)} />
+          <Route path="/clock" component={withAuth(MirrorClock)} />
+          <Route path="/photo" component={withAuth(ImageInput)} />
+            <Route path="/camera" component={withAuth(VideoInput)} />
             <Route path="/detection" component={Detection} />
             <Route path="/WeatherMap" component={Weather} />
             <Route path="/Weather-forecast" component={WeatherForecast} />

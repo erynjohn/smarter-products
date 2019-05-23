@@ -19,7 +19,8 @@ class Mirror extends Component {
     render() {
         const containerstyle = {
             color: 'white',
-            backgroundColor: 'black'
+            backgroundColor: 'black',
+            height: '2000px'
           }
 
         return (

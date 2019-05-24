@@ -108,7 +108,7 @@ class VideoInput extends Component {
             <div
               style={{
                 position: 'absolute',
-                border: 'solid',
+                border: 'bottom',
                 borderColor: 'white',
                 height: _H,
                 width: _W,
@@ -139,7 +139,8 @@ class VideoInput extends Component {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center'
+          alignItems: 'center',
+          fontSize: '2em'
         }}
       >
         {/* <p>Camera: {camera}</p> */}
@@ -152,7 +153,7 @@ class VideoInput extends Component {
           <div style={{ position: 'relative', width: WIDTH }}>
             {!!videoConstraints ? (
               <div style={{ position: 'absolute' }}>
-                <Webcam style={{opacity: 1}}
+                <Webcam style={{opacity: 0}}
                   audio={false}
                   width={WIDTH}
                   height={HEIGHT}

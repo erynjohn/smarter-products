@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const withAuth = require('../middleware');
 const fetch = require('node-fetch');
+const fs = require('fs');
 
 const router = express.Router();
 const secret = process.env.SECRET
@@ -25,9 +26,28 @@ router.get('/api/weather', (req, res) => {
 
 })
 router.post('/api/profile', (req, res) => {
-  const name = req.body;
-  console.log(name)
-  // res.status(204).send()
+
+  const name = '';
+  const firstname = '';
+  const discriptors = [];
+  const body = {
+    firstname: req.body.name,
+    name: req.body.name,
+    discriptors: req.body.descriptors
+  }
+  fs.open('../client/src/descriptors/profile.json', 'a', function (err, file) {
+    if (err) throw err;
+    console.log('Saved!');
+    res.send(204)
+  });
+
+  // fs.appendFile('../client/src/descriptors/profile.json',"utf-8", body, function (err) {
+  //   if (err) throw err;
+  //   console.log('Updated!');
+  // });
+
+  console.log(body)
+
   res.send(204)
 })
 router.get('/api/smith', (req, res) => {

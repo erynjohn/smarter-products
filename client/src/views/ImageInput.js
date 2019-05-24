@@ -27,8 +27,9 @@ class ImageInput extends Component {
     this.state = { 
       ...INIT_STATE, 
       faceMatcher: null,
-      name: ''
-
+      name: '',
+      email: '',
+      zipcode: ''
      };
   }
 

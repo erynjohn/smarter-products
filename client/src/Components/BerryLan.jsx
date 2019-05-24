@@ -11,7 +11,7 @@ const berrylan = () => {
     </div>
     <div style={{marginBottom: '70px'}}>
       <MDBBtn href="https://itunes.apple.com/us/app/berrylan/id1436156018" target="_blank" color="dark">
-        Itunes
+        iTunes
       </MDBBtn>
       <MDBBtn
         href="https://itunes.apple.com/us/app/berrylan/id1436156018"
